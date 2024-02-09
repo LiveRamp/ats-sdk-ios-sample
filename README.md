@@ -22,7 +22,7 @@ The project is meant to provide developers a functional code example that can be
 The source code for the sample application is accessible within the `LRAtsSDKSample` subdirectory, which is structured as follows:
 
 * `Examples`
-    * This directory contains a collection of code snippets demonstrating various use cases of `LRAtSDK`. Each nested subdirectory is dedicated to illustrating a specific use case.
+    * This directory contains a collection of code snippets demonstrating various use cases of `LRAtSDK`. Each nested `UIViewController` is dedicated to illustrating a specific use case.
 * `Internal`
     * **Caution**: Do not copy or use this code in production.
     * This directory contains supporting code for certain functionalities presented in the sample application. It is unrelated to the core behavior or the usage of the `LRAtsSDK`.
