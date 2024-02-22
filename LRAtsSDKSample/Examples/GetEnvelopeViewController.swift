@@ -1,0 +1,41 @@
+//
+//  GetEnvelopeViewController.swift
+//  LRAtsSDKSample
+//
+//  Created by Najdan Tomic on 2/9/24.
+//
+//  Copyright © 2024 Liveramp. All rights reserved.
+//
+
+import UIKit
+import LRAtsSDK
+
+class GetEnvelopeViewController: UIViewController {
+    @IBOutlet weak var appIDTextField: UITextField!
+    @IBOutlet weak var envelopeResultTextView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func getEnvelopeButtonPressed(_ sender: UIButton) {
+        Task {
+            guard let appID = appIDTextField.text else { return }
+            // You should provide your appID here
+            let lrAtsConfiguration = LRAtsConfiguration(appId: appID)
+            do {
+                // SDK should be initialized only once
+                // Make sure you have ATT consent and user consent to initialize and get envelope successfully
+                try await LRAts.shared.initialize(with: lrAtsConfiguration)
+                // You can use email, phone or custom identifier to get envelope
+                let identifier = LREmailIdentifier("example@mail.com")
+    //                let identifier = LRPhoneNumberIdentifier("0123456789")
+    //                let identifier = LRCustomIdentifier("54321:abc123")
+                let envelope = try await LRAts.shared.getEnvelope(identifier)
+                envelopeResultTextView.text = envelope.stringRepresentation
+            } catch {
+                envelopeResultTextView.text = error.localizedDescription
+            }
+        }
+    }
+}
