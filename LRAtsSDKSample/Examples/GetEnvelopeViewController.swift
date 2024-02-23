@@ -22,15 +22,16 @@ class GetEnvelopeViewController: UIViewController {
         Task {
             guard let appID = appIDTextField.text else { return }
             // You should provide your appID here
-            let lrAtsConfiguration = LRAtsConfiguration(appId: appID)
+            // isLogToFileEnabled is set to true for debugging purposes, do not use it in your production app
+            let lrAtsConfiguration = LRAtsConfiguration(appId: appID, logToFileEnabled: true)
             do {
                 // SDK should be initialized only once
                 // Make sure you have ATT consent and user consent to initialize and get envelope successfully
                 try await LRAts.shared.initialize(with: lrAtsConfiguration)
                 // You can use email, phone or custom identifier to get envelope
                 let identifier = LREmailIdentifier("example@mail.com")
-    //                let identifier = LRPhoneNumberIdentifier("0123456789")
-    //                let identifier = LRCustomIdentifier("54321:abc123")
+//                let identifier = LRPhoneNumberIdentifier("0123456789")
+//                let identifier = LRCustomIdentifier("54321:abc123")
                 let envelope = try await LRAts.shared.getEnvelope(identifier)
                 envelopeResultTextView.text = envelope.stringRepresentation
             } catch {
