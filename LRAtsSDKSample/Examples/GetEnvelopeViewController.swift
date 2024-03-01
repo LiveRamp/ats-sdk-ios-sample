@@ -13,9 +13,11 @@ import LRAtsSDK
 class GetEnvelopeViewController: UIViewController {
     @IBOutlet weak var appIDTextField: UITextField!
     @IBOutlet weak var envelopeResultTextView: UITextView!
+    @IBOutlet weak var logTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        LogObserver.observe(on: logTextView)
     }
     
     @IBAction func getEnvelopeButtonPressed(_ sender: UIButton) {

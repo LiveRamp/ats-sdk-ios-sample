@@ -35,3 +35,10 @@ extension CALayer {
         self.borderColor = color.cgColor
     }
 }
+
+extension UITextView {
+    func scrollToBottom() {
+        let range = NSMakeRange(text.count - 1, 1)
+        scrollRangeToVisible(range)
+    }
+}
