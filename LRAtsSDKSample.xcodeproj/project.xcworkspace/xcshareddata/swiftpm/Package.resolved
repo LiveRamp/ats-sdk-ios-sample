@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/LiveRamp/ats-sdk-ios",
       "state" : {
-        "revision" : "9ef15ef99e3b151c90bf3af8950b61f58471203e",
-        "version" : "2.3.0"
+        "revision" : "06ffcc967b911d920054d48cc92cade81d4df30f",
+        "version" : "2.4.0"
       }
     }
   ],
