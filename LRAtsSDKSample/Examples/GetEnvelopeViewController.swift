@@ -34,6 +34,7 @@ class GetEnvelopeViewController: UIViewController {
                 let identifier = LREmailIdentifier("example@mail.com")
 //                let identifier = LRPhoneNumberIdentifier("0123456789")
 //                let identifier = LRCustomIdentifier("54321:abc123")
+//                let identifier = LREnvelopeIdentifier(<#envelope value#>)
                 let envelope = try await LRAts.shared.getEnvelope(identifier)
                 envelopeResultTextView.text = envelope.stringRepresentation
             } catch {
