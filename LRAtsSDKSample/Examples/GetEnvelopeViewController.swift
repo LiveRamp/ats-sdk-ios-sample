@@ -30,11 +30,11 @@ class GetEnvelopeViewController: UIViewController {
                 // SDK should be initialized only once
                 // Make sure you have ATT consent and user consent to initialize and get envelope successfully
                 try await LRAts.shared.initialize(with: lrAtsConfiguration)
-                // You can use email, phone or custom identifier to get envelope
+                // You can use email, phone, envelope or custom identifier to get an envelope
                 let identifier = LREmailIdentifier("example@mail.com")
 //                let identifier = LRPhoneNumberIdentifier("0123456789")
-//                let identifier = LRCustomIdentifier("54321:abc123")
 //                let identifier = LREnvelopeIdentifier(<#envelope value#>)
+//                let identifier = LRCustomIdentifier("54321:abc123")
                 let envelope = try await LRAts.shared.getEnvelope(identifier)
                 envelopeResultTextView.text = envelope.stringRepresentation
             } catch {
