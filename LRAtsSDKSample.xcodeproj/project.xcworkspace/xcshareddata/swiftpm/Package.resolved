@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ats-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LiveRamp/ats-sdk-ios",
+      "state" : {
+        "revision" : "06ffcc967b911d920054d48cc92cade81d4df30f",
+        "version" : "2.4.0"
+      }
+    }
+  ],
+  "version" : 2
+}
