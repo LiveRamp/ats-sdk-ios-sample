@@ -11,7 +11,7 @@ import UIKit
 import LRAtsSDK
 
 class GetEnvelopeViewController: UIViewController {
-    @IBOutlet weak var appIDTextField: UITextField!
+    @IBOutlet weak var configIDTextField: UITextField!
     @IBOutlet weak var envelopeResultTextView: UITextView!
     @IBOutlet weak var logTextView: UITextView!
     
@@ -26,11 +26,11 @@ class GetEnvelopeViewController: UIViewController {
     
     private func configureLRAtsExample() {
         Task {
-            guard let appID = appIDTextField.text else { return }
-            // You should provide your appID here
+            guard let configID = configIDTextField.text else { return }
+            // You should provide your configID here
             
             let lrAtsConfiguration = LRAtsConfiguration(
-                appId: appID,
+                configID: configID,
                 logToFileEnabled: true // Logging is enabled for debugging purposes, do not use it in your production app!
             )
             
