@@ -60,7 +60,10 @@ class LogObserver: NSObject, NSFilePresenter {
     }
     
     private func formatLogsIfPossible(_ logs: String) -> String {
-        let formattedLogs = logs.split(separator: "\n").map { String($0).components(separatedBy: ")}: ")[1] }.joined(separator: "\n\n")
+        let formattedLogs = logs.split(separator: "\n").map { line -> String in
+            let components = line.components(separatedBy: ")}: ")
+            return components.count < 2 ? String(line) : components[1]
+        }.joined(separator: "\n\n")
         return formattedLogs
     }
 }

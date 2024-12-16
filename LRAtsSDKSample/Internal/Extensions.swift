@@ -13,14 +13,23 @@ import LRAtsSDK
 extension LREnvelope {
     var stringRepresentation: String {
         var envelopeResultText: [String] = [String]()
-        if let rampID = envelope {
-            envelopeResultText.append("envelope:\n\(rampID)")
+        if let envelope {
+            envelopeResultText.append("envelope:\n\(envelope)")
         }
-        if let envelope24 = envelope24 {
+        if let envelope24 {
             envelopeResultText.append("envelope24:\n\(envelope24)")
         }
-        if let envelope25 = envelope25 {
+        if let envelope25 {
             envelopeResultText.append("envelope25:\n\(envelope25)")
+        }
+        if let pairSegments {
+            envelopeResultText.append("pairSegments:\n\(pairSegments)")
+        }
+        if let envelope26 {
+            envelopeResultText.append("envelope26:\n\(envelope26)")
+        }
+        if let atsDirectSegments {
+            envelopeResultText.append("atsDirectSegments:\n\(atsDirectSegments)")
         }
         return envelopeResultText.joined(separator: "\n")
     }

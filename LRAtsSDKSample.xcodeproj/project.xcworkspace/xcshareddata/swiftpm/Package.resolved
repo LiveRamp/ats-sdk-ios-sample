@@ -1,14 +1,15 @@
 {
+  "originHash" : "90e00c8bb389321effc01e5c977683b1ee86806940f5e6d0fb5ee24e39cc272d",
   "pins" : [
     {
       "identity" : "ats-sdk-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/LiveRamp/ats-sdk-ios",
       "state" : {
-        "revision" : "06ffcc967b911d920054d48cc92cade81d4df30f",
-        "version" : "2.4.0"
+        "revision" : "948c7091f2921cb5d3e29c9a61202cf7d488a54f",
+        "version" : "2.8.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
